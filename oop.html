@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 工厂模式
+    function Tab () {
+      //拿零件
+      let obj = {}
+      //装零件
+      obj.eleLength = 1
+      obj.psFor = function () {
+        // todo
+      }
+      //出场
+      return obj
+    }
+    //构造函数
+    //new 运算符作用：1.this指向实例；2.隐式返回this，3执行函数（new Tab = new Tab() = Tab()）
+    // 约定俗成：构造函数首字母大写，属性放构造函数里，方法放原型里
+    function Tab () {
+      this.elelength = 1
+    }
+    //prototype：原型
+    //实例obj由两部分组成：构造函数Tab和原型Tab.prototype，两者的this都指向obj
+    Tab.prototype.psFor = function () {
+      console.log('...')
+    }
+    let obj = new Tab()
+    let obj2 = new Tab()
+    obj2.elelength = 2
+    console
+    console.log(obj.elelength, obj2.elelength)
+</script>
